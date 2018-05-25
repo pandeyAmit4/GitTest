@@ -1,0 +1,11 @@
+.slds-form-element__control,.slds-select_container{
+    display: inline-block;
+}
+.slds-form-element__control{
+    padding-right: 10px;
+}
+.slds-section{
+    border: 2px solid lightgray;
+    padding: 27px;
+    border-radius: 2%;
+}
