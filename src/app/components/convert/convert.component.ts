@@ -17,8 +17,8 @@ export class ConvertComponent implements OnInit {
   
   @ViewChild('changeRate') changeRate: ElementRef;
   constructor(private dataservice: DataService) {
-    console.log("in convert component constructor");
-    console.log(dataservice.getConversionRate());
+    // console.log("in convert component constructor");
+    // console.log(dataservice.getConversionRate());
    }
    keys() : Array<string> {
     return Object.keys(this.currencies.rates);
@@ -26,7 +26,7 @@ export class ConvertComponent implements OnInit {
    iamclicked(inputValue){
      this.currencyToBeChanged=inputValue;
      this.currType = (this.changeRate.nativeElement.value * this.currencyToBeChanged);
-     console.log(this.changeRate.nativeElement.value);
+    //  console.log(this.changeRate.nativeElement.value);
    }
    currencyTypeChanged(event){
      if(this.currencyToBeChanged){
@@ -36,7 +36,7 @@ export class ConvertComponent implements OnInit {
    getDetails(event){
      let selector=this.changeRate.nativeElement;
     let text=selector.options[selector.selectedIndex].text;
-     console.log(this.changeRate.nativeElement);
+    //  console.log(this.changeRate.nativeElement);
     alert("Current Change Rate for "+ text +" Is: "+this.changeRate.nativeElement.value);
    }
     @HostListener('keydown', [ '$event' ])
@@ -52,7 +52,7 @@ export class ConvertComponent implements OnInit {
     }
   ngOnInit() {
     this.dataservice.getConversionRate().subscribe((currencyjosn)=>{
-      console.log(currencyjosn);
+      // console.log(currencyjosn);
       this.currencies=currencyjosn;
     });
   }
