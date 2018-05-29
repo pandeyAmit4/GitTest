@@ -1,5 +1,5 @@
 {
-  "name": "Currency Converter",
+  "name": "CurrencyConverter",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
