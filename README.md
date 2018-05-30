@@ -1,10 +1,15 @@
-# A4app
+# Currency Converter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1. It usases Node-Js as backend server.
+
+##Install dependencies
+
+go to the project directory and
+Run `npm install`. This will install all the dependencies of this app to your local server.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
