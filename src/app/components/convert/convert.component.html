@@ -1,9 +1,19 @@
 <section ngClass="slds-section slds-grid slds-wrap slds-medium-size_1-of-3 slds-large-size_1-of-3" *ngIf="currencies">
-  <header ngClass="slds-size_4-of-4 slds-size_4-of-4"><h4>Currency Converter</h4></header><br/>
+  <header ngClass="slds-size_4-of-4 slds-size_4-of-4">
+          <h4>Currency Converter</h4>
+  </header><br/>
   <div ngClass="slds-form-element slds-size_6-of-6 slds-size_6-of-6">
       <label ngClass="slds-form-element__label" for="text-input-id-1">Type in amount and select currency:</label><br/>
       <div ngClass="slds-form-element__control slds-size_4-of-6 slds-size_4-of-6">
-        <input type="text" ngClass="slds-input" placeholder="0.00" name="" #currencyInput ng-model="currencyToBeChanged" (input)="iamclicked(currencyInput.value);" id="text-input-id-1">
+        <input 
+                type="text" 
+                ngClass="slds-input" 
+                placeholder="0.00" 
+                name="" 
+                #currencyInput 
+                ng-model="currencyToBeChanged" 
+                (input)="setChanges(currencyInput.value);" 
+                id="text-input-id-1">
       </div>
       <div ngClass="slds-select_container slds-size_2-of-6 slds-size_2-of-6">
             <select ngClass="slds-select">
@@ -14,14 +24,28 @@
   <div ngClass="slds-form-element slds-size_6-of-6 slds-size_6-of-6">
         <label ngClass="slds-form-element__label" for="text-input-id-2">Converted Amount:</label><br/>
         <div ngClass="slds-form-element__control slds-size_4-of-6 slds-size_4-of-6">
-            <input type="text" id="text-input-id-2" ngClass="slds-input" placeholder="0.00" value={{currType}} name="" #convertedOutput>
+            <input 
+                type="text" 
+                id="text-input-id-2" 
+                ngClass="slds-input" 
+                placeholder="0.00" 
+                value={{currType}} 
+                name="" #convertedOutput>
         </div>
         <div ngClass="slds-select_container slds-size_2-of-6 slds-size_2-of-6">
-                <select ngClass="slds-select" id="changeRate" #changeRate (change)="currencyTypeChanged($event)">
+                <select 
+                        ngClass="slds-select" 
+                        id="changeRate" 
+                        #changeRate 
+                        (change)="currencyTypeChanged($event)">
                         <option *ngFor="let key of keys();" value= {{currencies.rates[key]}}>{{key}}</option>
                 </select>
         </div>
         
   </div>
-  <div ngClass="slds-left"><a href="#nogo" (click)="getDetails($event)">Disclaimer</a></div>
+  <div ngClass="discContainer slds-left">
+          <a href="#nogo" 
+          (click)="getDetails($event)">Disclaimer</a>
+          <div ngClass="slds-size_3-of-6" *ngIf="isDisclaimer">{{discMsg}}</div>
+  </div>
 </section>
