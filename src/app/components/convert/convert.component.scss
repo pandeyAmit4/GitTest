@@ -16,6 +16,11 @@
     width: 33%;
     padding: 10px;
 }
+@media (max-width: 720px){
+    :host {
+        width: 100%;
+    }
+}
 .discContainer{
     width: 100%;
     min-height: 40px;
